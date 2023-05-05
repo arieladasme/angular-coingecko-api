@@ -36,16 +36,16 @@ export class AppComponent implements OnInit {
   // .subscribe(): similar a fetch()
   //TODO: update code (subscribe)
   ngOnInit() {
-    /* this.http
+    this.http
       .get<Coin[]>(
         'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
       )
-      .subscribe(
-        (res) => {
+      .subscribe({
+        next: (res) => {
           this.coins = res;
           this.filteredCoins = res;
         },
-        (err) => console.log(err)
-      ); */
+        error: (err) => console.log(err),
+      });
   }
 }
