@@ -7,7 +7,7 @@ interface Coin {
   symbol: string;
   image: string;
   current_price: number;
-  price_change_percentage_24: number;
+  price_change_percentage_24h: number;
   total_volume: number;
 }
 
@@ -18,6 +18,7 @@ interface Coin {
 })
 export class AppComponent implements OnInit {
   coins: Coin[] = [];
+  titles: string[] = ['#', 'Coin', 'Price', 'Price Change', '24h Volume'];
 
   constructor(private http: HttpClient) {}
 
